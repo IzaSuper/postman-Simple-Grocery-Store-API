@@ -1,0 +1,18 @@
+name: Postman Tests
+on: [ pull_request ]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Install Newman
+        run: npm install -g newman
+
+      - name: Run Postman Tests 1
+        run: newman run "Simple Grocery Store API.postman_collection.json" --environment "Simple Grocery - Production.postman_environment.json"
+
+      - name: Run Postman Tests 2
+        run: newman run "Simple Grocery Store API.postman_collection.json" --environment "Simple Grocery - Testing.postman_environment.json"
