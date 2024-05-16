@@ -4,7 +4,8 @@
 		"name": "Simple Grocery Store API",
 		"description": "This collection presents all possible scenarios while using API Simple Grocery Store.\n\nFirstly, please choose an environment - production or testing.\n\nThen please test it step by step, from A to E folder.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "31199026"
+		"_exporter_id": "31199026",
+		"_collection_link": "https://iza2309.postman.co/workspace/My-Workspace~8bdef991-830b-4616-8923-782f552a1854/collection/31199026-b8c21699-1414-4fc9-8151-241034e18129?action=share&source=collection_link&creator=31199026"
 	},
 	"item": [
 		{
@@ -212,7 +213,11 @@
 							"listen": "prerequest",
 							"script": {
 								"exec": [
-									"console.clear()"
+									"console.clear()",
+									"",
+									"pm.environment.get(\"randomString\")",
+									"pm.environment.get(\"randomEmail\")",
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -243,7 +248,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"clientName\": \"tester4\",\n    \"clientEmail\": \"tester4@gmail.com\"\n}",
+							"raw": "{\n    \"clientName\": \"{{randomString}}\",\n    \"clientEmail\": \"{{randomEmail}}\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
